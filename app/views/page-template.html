@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  {{ pageTitle}} + " | " + {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-heading-xl">
+        {{ pageTitle }}
+      </h1>
+
+      {% block contentInner %}
+      {% endblock %}
+
+    </div>
+  </div>
+{% endblock %}
