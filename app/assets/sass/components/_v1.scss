@@ -4,7 +4,9 @@
   $border-radius: 8px;
   $border-width: 1px;
   $icon-size-mobile: 24px;
-  $icon-size-desktop: 24px;
+  $icon-size-desktop: 32px;
+  $hover-color: darken($color_nhsuk-blue, 15%);
+  $active-color: darken($color_nhsuk-blue, 25%);
 
   // Border colour
   .app-cards--secondary .nhsapp-card,
@@ -80,6 +82,52 @@
   // Secondary expander
   .app-expander--secondary {
     background: transparent;
+  }
+
+  // Link underline style
+  .nhsuk-details__summary,
+  .nhsuk-details__summary-text,
+  .nhsuk-link,
+  .nhsuk-card__link,
+  .app-link--with-icon,
+  .nhsuk-breadcrumb__link {
+    text-decoration: underline;
+    text-decoration-thickness: max(1px, .0625rem);
+    text-underline-offset: .1578em;
+
+    &:hover {
+      color: $hover-color;
+      text-decoration: underline;
+      text-decoration-thickness: max(3px, .1875rem, .12em);
+      -webkit-text-decoration-skip-ink: none;
+      text-decoration-skip-ink: none;
+      -webkit-text-decoration-skip: none;
+      text-decoration-skip: none;
+    }
+
+    &:active {
+      color:   $active-color;
+    }
+    
+  }
+
+  .nhsuk-expander .nhsuk-details__summary:hover .nhsuk-details__summary-text,
+  .nhsapp-card__link:hover,
+  .nhsuk-action-link__link:hover,
+  .nhsuk-back-link__link:hover,
+  .nhsuk-breadcrumb__backlink:hover {
+    color: $hover-color;
+    text-decoration: underline;
+    text-decoration-thickness: max(3px, .1875rem, .12em);
+    -webkit-text-decoration-skip-ink: none;
+    text-decoration-skip-ink: none;
+    -webkit-text-decoration-skip: none;
+    text-decoration-skip: none;
+    text-underline-offset: .1578em;
+  }
+
+  .nhsapp-card:hover .nhsapp-icon {
+    fill: $hover-color;
   }
 
 }
