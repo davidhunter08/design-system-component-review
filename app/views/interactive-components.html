@@ -37,7 +37,10 @@
         title: 'Card link',
         href: '#'
       },
-
+      {
+        title: 'Card link',
+        href: '#'
+      },
       {
         title: 'Card link',
         href: '#',
@@ -50,6 +53,10 @@
     stacked: true,
     classes: "app-cards--secondary",
     cards: [
+      {
+        title: "Secondary card link",
+        href: "#"
+      },
       {
         title: "Secondary card link",
         href: "#"
@@ -89,6 +96,17 @@
         <li>going online to see them (if you have signed up for GP online services) </li>
       </ul>"
     }) }}
+    {{ details({
+      classes: "nhsuk-expander",
+      text: "Expander",
+      attributes: "open",
+      HTML: "
+      <p>You can see your GP records by:</p>
+      <ul>
+        <li>asking for them at your GP surgery </li>
+        <li>going online to see them (if you have signed up for GP online services) </li>
+      </ul>"
+    }) }}
   </div>
 
   <p>NHS.UK buttons</p>
@@ -98,7 +116,7 @@
   }) }}
   
   {{ button({
-    text: "Secondarty",
+    text: "Secondary",
     classes: "nhsuk-button--secondary"
   }) }}
 
@@ -132,14 +150,14 @@
     text: "Details",
     HTML: "
     <p>An NHS number is a 10 digit number, like 485 777 3456.</p>
-      <p>You can find your NHS number by logging in to a GP online service or on any document the NHS has sent you, such as your:</p>
-      <ul>
-          <li>prescriptions</li>
-          <li>test results</li>
-          <li>hospital referral letters</li>
-          <li>appointment letters</li>
-      </ul>
-      <p>Ask your GP surgery for help if you can't find your NHS number.</p>
+    "
+  }) }}
+
+  {{ details({
+    text: "Details",
+    attributes: "open",
+    HTML: "
+    <p>An NHS number is a 10 digit number, like 485 777 3456.</p>
     "
   }) }}
 
