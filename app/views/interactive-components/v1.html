@@ -1,0 +1,246 @@
+{% extends 'page-template.html' %}
+
+{% set pageSection = "Interactive components" %}
+{% set pageTitle = "Ideation 1" %}
+
+{% block contentInner %}
+
+<div class="v1">
+
+  {{ card({
+    href: "#",
+    clickable: "true",
+    headingLevel: 5,
+    heading: "Top task card",
+    headingClasses: "nhsuk-heading-xs"
+  }) }}
+
+  {{ card({
+    href: "#",
+    primary: "true",
+    clickable: "true",
+    heading: "Primary card",
+    headingClasses: "nhsuk-heading-m",
+    description: "A quick guide for people who have care and support needs and their carers"
+  }) }}
+
+  {{ card({
+    href: "#",
+    clickable: "true",
+    secondary: "true",
+    heading: "Secondary card",
+    headingClasses: "nhsuk-heading-m",
+    description: "Services the NHS provides if you need urgent or emergency medical help"
+  }) }}
+
+  {{ nhsappCardGroup({
+    stacked: true,
+    cards: [
+      {
+        title: 'Card link',
+        href: '#'
+      },
+      {
+        title: 'Card link',
+        href: '#'
+      },
+      {
+        title: 'Card link',
+        href: '#',
+        description: 'With a description'
+      }
+    ]
+  }) }}
+
+  {{ nhsappCardGroup({
+    stacked: true,
+    classes: "app-cards--secondary",
+    cards: [
+      {
+        title: "Secondary card link",
+        href: "#"
+      },
+      {
+        title: "Secondary card link",
+        href: "#"
+      },
+      {
+        title: "Secondary card link",
+        href: "#",
+        description: 'With a description'
+      }
+    ]
+  })}}
+
+  {{ nhsappCard({
+    title: 'Card link with icon',
+    href: '#',
+    prefixIcon: 'switchProfile'
+  }) }}
+
+  <div class="nhsuk-expander-group">
+    {{ details({
+      classes: "nhsuk-expander",
+      text: "Expander",
+      HTML: "
+      <p>You can see your GP records by:</p>
+      <ul>
+        <li>asking for them at your GP surgery </li>
+        <li>going online to see them (if you have signed up for GP online services) </li>
+      </ul>"
+    }) }}
+    {{ details({
+      classes: "nhsuk-expander",
+      text: "Expander",
+      HTML: "
+      <p>You can see your GP records by:</p>
+      <ul>
+        <li>asking for them at your GP surgery </li>
+        <li>going online to see them (if you have signed up for GP online services) </li>
+      </ul>"
+    }) }}
+    {{ details({
+      classes: "nhsuk-expander",
+      text: "Expander",
+      attributes: "open",
+      HTML: "
+      <p>You can see your GP records by:</p>
+      <ul>
+        <li>asking for them at your GP surgery </li>
+        <li>going online to see them (if you have signed up for GP online services) </li>
+      </ul>"
+    }) }}
+  </div>
+
+  <div class="nhsuk-expander-group">
+    {{ details({
+      classes: "nhsuk-expander app-expander--secondary",
+      text: "Expander secondary",
+      HTML: "
+      <p>You can see your GP records by:</p>
+      <ul>
+        <li>asking for them at your GP surgery </li>
+        <li>going online to see them (if you have signed up for GP online services) </li>
+      </ul>"
+    }) }}
+    {{ details({
+      classes: "nhsuk-expander app-expander--secondary",
+      text: "Expander secondary",
+      HTML: "
+      <p>You can see your GP records by:</p>
+      <ul>
+        <li>asking for them at your GP surgery </li>
+        <li>going online to see them (if you have signed up for GP online services) </li>
+      </ul>"
+    }) }}
+    {{ details({
+      classes: "nhsuk-expander app-expander--secondary",
+      text: "Expander secondary",
+      attributes: "open",
+      HTML: "
+      <p>You can see your GP records by:</p>
+      <ul>
+        <li>asking for them at your GP surgery </li>
+        <li>going online to see them (if you have signed up for GP online services) </li>
+      </ul>"
+    }) }}
+  </div>
+
+  <p>NHS.UK buttons</p>
+
+  {{ button({
+    text: "Primary"
+  }) }}
+  
+  {{ button({
+    text: "Secondary",
+    classes: "nhsuk-button--secondary"
+  }) }}
+
+  {{ button({
+    text: "Warning",
+    classes: "nhsuk-button--warning"
+  }) }}
+
+  <p>NHS App buttons</p>
+
+  <div class="nhsapp-button-group">
+
+    {{ button({
+      text: "Primary",
+      classes: "nhsapp-button"
+    }) }}
+    
+    {{ button({
+      text: "Secondary",
+      classes: "nhsapp-button--secondary nhsapp-button"
+    }) }}
+
+    {{ button({
+      text: "Warning",
+      classes: "nhsuk-button--warning nhsapp-button"
+    }) }}
+    
+  </div>
+
+  {{ details({
+    text: "Details",
+    HTML: "
+    <p>An NHS number is a 10 digit number, like 485 777 3456.</p>
+    "
+  }) }}
+
+  {{ details({
+    text: "Details",
+    attributes: "open",
+    HTML: "
+    <p>An NHS number is a 10 digit number, like 485 777 3456.</p>
+    "
+  }) }}
+
+  {{ actionLink({
+    text: "Action link",
+    href: "#"
+  }) }}
+
+  <p>
+    <a href="#" class="app-link--with-icon nhsuk-link--no-visited-state">
+      {{ nhsappIcon('help') }}
+      Link with icon
+    </a>
+  </p>
+
+  <p><a href="#" class="nhsuk-link">Link</a></p>
+
+  <p><a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Link with no visited state</a></p>
+
+  {{ backLink({
+    href: "#",
+    text: "Back"
+  }) }}
+
+  {{ breadcrumb({
+    items: [
+      {
+        href: "#",
+        text: "Level one"
+      },
+      {
+        href: "#",
+        text: "Level two"
+      }
+    ],
+    href: "#",
+    text: "Level three"
+  }) }}
+
+  {{ pagination({
+    previousUrl: "#",
+    previousPage: "Treatments",
+    nextUrl: "#",
+    nextPage: "Symptoms"
+  }) }}
+
+</div>
+
+{% endblock %}

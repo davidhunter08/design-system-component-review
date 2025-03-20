@@ -16,6 +16,9 @@
     <div class="nhsuk-grid-column-full">
 
       <h1 class="nhsuk-heading-xl">
+        {% if pageSection %}
+          <span class="nhsuk-caption-xl">{{ pageSection }}</span>
+        {% endif %}
         {{ pageTitle }}
       </h1>
 
