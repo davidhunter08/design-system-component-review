@@ -3,10 +3,31 @@
   $border-color: $color_nhsuk-grey-3;
   $border-radius: 8px;
   $border-width: 1px;
-  $icon-size-mobile: 24px;
-  $icon-size-desktop: 32px;
+  $icon-size-24: 24px;
+  $icon-size-28: 28px;
+  $icon-size-32: 32px;
+  $icon-size-36: 36px;
+  $icon-gap-mobile: 8px;
+  $icon-gap-desktop: 12px;
   $hover-color: darken($color_nhsuk-blue, 15%);
   $active-color: darken($color_nhsuk-blue, 25%);
+
+  // Adjusted link style to imtpove the underline spacing
+  @mixin link-style {
+    text-decoration: underline;
+    text-decoration-thickness: max(1px, .0625rem);
+    text-underline-offset: .1578em;
+  }
+
+  @mixin link-style-hover {
+    color: $hover-color;
+    text-decoration: underline;
+    text-decoration-thickness: max(3px, .1875rem, .12em);
+    -webkit-text-decoration-skip-ink: none;
+    text-decoration-skip-ink: none;
+    -webkit-text-decoration-skip: none;
+    text-decoration-skip: none;
+  }
 
   // Border colour
   .app-cards--secondary .nhsapp-card,
@@ -82,11 +103,6 @@
     }
   }
 
-  // Secondary card padding
-  .nhsuk-card--secondary .nhsuk-card__content {
-    @include nhsuk-responsive-padding(5);
-  }
-
   // Secondary expander
   .app-expander--secondary {
     background: transparent;
@@ -100,41 +116,52 @@
   .app-link--with-icon,
   .nhsuk-breadcrumb__link,
   .nhsuk-pagination__page {
-    text-decoration: underline;
-    text-decoration-thickness: max(1px, .0625rem);
-    text-underline-offset: .1578em;
+    @include link-style;
 
     &:hover {
-      color: $hover-color;
-      text-decoration: underline;
-      text-decoration-thickness: max(3px, .1875rem, .12em);
-      -webkit-text-decoration-skip-ink: none;
-      text-decoration-skip-ink: none;
-      -webkit-text-decoration-skip: none;
-      text-decoration-skip: none;
+      @include link-style-hover;
     }
 
     &:active {
       color:   $active-color;
     }
+
+    &:focus {
+      color: #212b32;
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
+    }
     
   }
 
-  .nhsuk-expander .nhsuk-details__summary:hover .nhsuk-details__summary-text,
-  .nhsapp-card__link:hover,
-  .nhsuk-action-link__link:hover,
-  .nhsuk-back-link__link:hover,
-  .nhsuk-breadcrumb__backlink:hover,
-  .nhsuk-pagination__link:hover .nhsuk-pagination__page {
-    color: $hover-color;
-    text-decoration: underline;
-    text-decoration-thickness: max(3px, .1875rem, .12em);
-    -webkit-text-decoration-skip-ink: none;
-    text-decoration-skip-ink: none;
-    -webkit-text-decoration-skip: none;
-    text-decoration-skip: none;
-    text-underline-offset: .1578em;
+  // Link style with no underline
+  .nhsapp-card__link,
+  .nhsuk-action-link__link,
+  .nhsuk-back-link__link,
+  .nhsuk-breadcrumb__backlink {
+    &:hover {
+      @include link-style-hover;
+    }
+    &:focus {
+      color: #212b32;
+      text-decoration: none;
+    }
   }
+          
+   .nhsuk-expander .nhsuk-details__summary:hover .nhsuk-details__summary-text,
+   .nhsuk-pagination__link:hover .nhsuk-pagination__page {
+    @include link-style-hover;
+   }
+
+   .nhsuk-expander .nhsuk-details__summary:focus .nhsuk-details__summary-text,
+   .nhsuk-details__summary:focus .nhsuk-details__summary-text,
+   .nhsuk-pagination__link:focus .nhsuk-pagination__page,
+   .nhsuk-details__summary-text:focus {
+    color: #212b32;
+    text-decoration: none;
+   }
 
   .nhsuk-pagination__link:hover {
     color: $hover-color;
@@ -167,25 +194,49 @@
     }
   }
 
+  // Give link with icon the same bottom margin as a standard link
+  .app-link--with-icon {
+    @include nhsuk-responsive-margin(4, "bottom");
+  }
+
   // Icon sizing
   .nhsapp-card .nhsapp-icon {
-    height: $icon-size-mobile;
-    width: $icon-size-mobile;
+    height: $icon-size-24;
+    width: $icon-size-24;
 
     @include mq($from: tablet) {
-      height: $icon-size-desktop;
-      width: $icon-size-desktop;
+      height: $icon-size-28;
+      width: $icon-size-28;
+    }
+  }
+
+  // Icon sizing
+  .app-link--with-icon .nhsapp-icon {
+    height: $icon-size-24;
+    width: $icon-size-24;
+
+    @include mq($from: tablet) {
+      height: $icon-size-28;
+      width: $icon-size-28;
     }
   }
 
   // Icon spacing
-  .nhsapp-card__container,
   .app-link--with-icon {
-    gap: 8px;
+    gap: $icon-gap-mobile;
+  }
+
+  .nhsapp-card__container {
+    gap: $icon-gap-mobile;
 
     @include mq($from: tablet) {
-      gap: 12px;
+      gap: $icon-gap-desktop;
     }
+  }
+
+  // Icon colour
+  .nhsapp-card .nhsapp-icon__chevron-right {
+    fill: rgba($color_nhsuk-blue, 0.65);
   }
 
   // Text sizing
@@ -200,27 +251,135 @@
   }
 
   // Padding
-  .nhsuk-card__content,
-  .nhsapp-card__container,
-  .nhsuk-expander .nhsuk-details__summary {
-    padding: 20px;
+  .nhsapp-card__container {
+    padding: 16px;
 
     @include mq($from: tablet) {
       padding: 24px;
     }
   }
 
-  .nhsuk-card__content--primary {
-    padding-right: nhsuk-spacing(9);
+  // Padding
+  .nhsuk-expander .nhsuk-details__summary {
+    padding: 12px 16px;
+
+    @include mq($from: tablet) {
+      padding: 20px 24px;
+    }
+  }
+
+  .nhsuk-card--secondary .nhsuk-card__content {
+    padding: 24px;
+
+    @include mq($from: tablet) {
+      padding: 32px;
+    }
   }
 
   .nhsuk-expander .nhsuk-details__summary {
     border-top: 0; //Remove transparent border
   }
 
-  // Override unwantd space
-  .nhsuk-card__content .nhsuk-card__description:last-of-type {
-    margin-bottom: 0;
+  .nhsuk-expander {
+  
+    .nhsuk-details__summary {
+      &:focus {
+        .nhsuk-details__summary-text::before {
+          background: $nhsuk-focus-color
+            url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__plus' xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='002f5c'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M12 8v8M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A")
+            left 0 center no-repeat;
+
+            @include mq($until: tablet) {
+              background: $nhsuk-focus-color
+            url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__plus' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='002f5c'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M12 8v8M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A")
+            left 0 center no-repeat;
+            }
+        }
+      }
+    }
+  
+    .nhsuk-details__summary-text {
+      padding-left: calc($icon-size-28 + $icon-gap-desktop);
+
+      @include mq($until: tablet) {
+        padding-left: calc($icon-size-24 + $icon-gap-mobile);
+      }
+    }
+  
+    .nhsuk-details__summary-text::before {
+      background: url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__plus' xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23005eb8'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M12 8v8M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A")
+        left 0 center no-repeat;
+      height: $icon-size-28;
+      top: calc(50% - ($icon-size-28/2));
+      width: $icon-size-28;
+
+      @include mq($until: tablet) {
+        background: url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__plus' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23005eb8'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M12 8v8M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A")
+        left 0 center no-repeat;
+        height: $icon-size-24;
+        top: calc(50% - ($icon-size-24/2));
+        width: $icon-size-24;
+      }
+    }
   }
+  
+  .nhsuk-expander[open] {
+  
+    .nhsuk-details__summary {
+      &:focus {
+        .nhsuk-details__summary-text::before {
+          background: $nhsuk-focus-color
+            url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__minus' xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='002f5c'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A")
+            left 0 center no-repeat; // [3]
+
+            @include mq($until: tablet) {
+              background: $nhsuk-focus-color
+            url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__minus' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='002f5c'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A")
+            left 0 center no-repeat;
+            }
+        }
+      }
+    }
+  
+    .nhsuk-details__summary-text::before {
+      background: url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__minus' xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23005eb8'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A")
+        left 0 center no-repeat; // [3]
+
+        @include mq($until: tablet) {
+          background: url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__minus' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23005eb8'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A")
+        left 0 center no-repeat;
+        }
+    }
+  }
+
+  // Action link
+  .nhsuk-action-link__link {
+    align-items: center;
+    display: inline-flex;
+    padding-left: 0;
+    gap: $icon-gap-mobile;
+
+    .nhsuk-icon {
+      height: $icon-size-28;
+      width: $icon-size-28;
+      position: relative;
+      top: 0;
+      left: 0;
+
+      @include mq($from: tablet) {
+        height: $icon-size-32;
+        width: $icon-size-32;
+      }
+    }
+  }
+
+  // Card link description style
+  .nhsapp-card__below {
+    p {
+      color: $color_nhsuk-grey-1;
+    }
+  }
+
+
 
 }
