@@ -1,20 +1,20 @@
 {% extends 'page-template.html' %}
 
 {% set pageSection = "Interactive components" %}
-{% set pageTitle = "Ideation 2" %}
+{% set pageTitle = "Ideation 3" %}
 
 {% block contentInner %}
 
 <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Updates</h2>
 <ul>
-  <li>2px border</li>
-  <li>lighter border colour #c2d2d6</li>
-  <li>card link chevron colour #769aa3</li>
+  <li>6px border radius</li>
+  <li>updated nhsuk card icon</li>
+  <li>nhsuk-spacing(6) bottom margin on cards</li>
 </ul>
 
-<div class="v2">
+<div class="v3">
 
-  <hr>
+  <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
 
   {{ card({
     href: "#",
@@ -24,14 +24,17 @@
     headingClasses: "nhsuk-heading-xs"
   }) }}
 
-  {{ card({
-    href: "#",
-    primary: "true",
-    clickable: "true",
-    heading: "Primary card",
-    headingClasses: "nhsuk-heading-m",
-    description: "A quick guide for people who have care and support needs and their carers"
-  }) }}
+  <div class="nhsuk-card nhsuk-card--clickable">
+    <div class="nhsuk-card__content nhsuk-card__content--primary">
+      <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="#">Primary card</a>
+      </h2>
+      <p class="nhsuk-card__description nhsuk-u-margin-bottom-0">A quick guide for people who have care and support needs and their carers</p>
+      <svg class="nhsuk-icon nhsapp-icon nhsapp-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="2rem" width="2rem" viewBox="0 0 24 24">
+        <path d="M8.82 19.11a.97.97 0 0 1-.72-.31.996.996 0 0 1 .03-1.41l5.61-5.38-5.6-5.25c-.4-.38-.42-1.01-.05-1.41.38-.4 1.01-.42 1.41-.05l6.37 5.97c.2.19.31.45.32.72s-.11.54-.31.73l-6.37 6.11c-.19.19-.44.28-.69.28Z"></path>
+      </svg>
+    </div>
+  </div>
 
   {{ card({
     href: "#",
@@ -111,7 +114,6 @@
     {{ details({
       classes: "nhsuk-expander",
       text: "Expander",
-      attributes: "open",
       HTML: "
       <p>You can see your GP records by:</p>
       <ul>
@@ -156,7 +158,6 @@
     {{ details({
       classes: "nhsuk-expander app-expander--secondary",
       text: "Expander secondary",
-      attributes: "open",
       HTML: "
       <p>You can see your GP records by:</p>
       <ul>
@@ -177,6 +178,8 @@
     </ul>"
   }) }}
 
+  <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
+
   <div class="nhsapp-button-group">
 
     {{ button({
@@ -196,24 +199,18 @@
     
   </div>
 
-  {{ details({
-    text: "Details",
-    HTML: "
-    <p>An NHS number is a 10 digit number, like 485 777 3456.</p>
-    "
-  }) }}
-
-  {{ details({
-    text: "Details",
-    attributes: "open",
-    HTML: "
-    <p>An NHS number is a 10 digit number, like 485 777 3456.</p>
-    "
-  }) }}
-
   {{ actionLink({
     text: "Action link",
     href: "#"
+  }) }}
+
+  <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
+
+  {{ details({
+    text: "Details",
+    HTML: "
+    <p>An NHS number is a 10 digit number, like 485 777 3456.</p>
+    "
   }) }}
 
   <a href="#" class="app-link--with-icon nhsuk-link--no-visited-state nhsuk-body-m">
@@ -224,6 +221,8 @@
   <p><a href="#" class="nhsuk-link">Link</a></p>
 
   <p><a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Link with no visited state</a></p>
+
+  <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
 
   {{ backLink({
     href: "#",
@@ -245,12 +244,16 @@
     text: "Level three"
   }) }}
 
+  <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
+
   {{ pagination({
     previousUrl: "#",
     previousPage: "Treatments",
     nextUrl: "#",
     nextPage: "Symptoms"
   }) }}
+
+  <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
 
   {{ button({
     text: "Primary"
@@ -265,6 +268,8 @@
     text: "Warning",
     classes: "nhsuk-button--warning"
   }) }}
+
+  <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
 
   <ul class="nhsapp-cards nhsapp-cards--stacked">
     <li class="nhsapp-card">

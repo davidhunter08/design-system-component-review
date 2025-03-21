@@ -38,6 +38,10 @@
     text-decoration-skip: none;
   }
 
+  hr {
+    border-color: $border-color;
+  }
+
   // Border colour
   // Primary containers
   .app-cards--secondary .nhsapp-card,
