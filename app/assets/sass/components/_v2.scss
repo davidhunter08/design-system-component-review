@@ -7,6 +7,7 @@
 
   $border-radius: 8px;
   $border-width: 2px;
+  $border-width-inner: 1px;
 
   $icon-size-24: 24px;
   $icon-size-28: 28px;
@@ -40,6 +41,7 @@
 
   hr {
     border-color: $border-color;
+    border-width: $border-width;
   }
 
   // Border colour
@@ -84,7 +86,7 @@
   // Expander divider line
   .nhsuk-expander-group .nhsuk-expander:not(:first-child) {
     border-top-color: $border-color;
-    border-top-width: $border-width;
+    border-top-width: $border-width-inner;
   }
 
   .nhsuk-expander-group .nhsuk-expander:not(:last-child) {
@@ -93,7 +95,7 @@
 
   .nhsapp-cards--stacked .nhsapp-card .nhsapp-card__container {
     border-color: $border-color;
-    border-width: $border-width;
+    border-width: $border-width-inner;
   }
 
   // Border radius
