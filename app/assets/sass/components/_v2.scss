@@ -1,12 +1,12 @@
-.v1 {
+.v2 {
 
-  $border-color: $color_nhsuk-grey-3;
+  $border-color: #c2d2d6;
 
   $primary-container-border-color: $border-color;
   $secondary-container-border-color: $border-color;
 
   $border-radius: 8px;
-  $border-width: 1px;
+  $border-width: 2px;
 
   $icon-size-24: 24px;
   $icon-size-28: 28px;
@@ -16,7 +16,7 @@
   $icon-gap-mobile: 8px;
   $icon-gap-desktop: 12px;
 
-  $chevron-color: rgba($color_nhsuk-blue, 0.65);
+  $chevron-color: #769aa3;
 
   $hover-color: darken($color_nhsuk-blue, 15%);
   $active-color: darken($color_nhsuk-blue, 25%);
@@ -80,10 +80,16 @@
   // Expander divider line
   .nhsuk-expander-group .nhsuk-expander:not(:first-child) {
     border-top-color: $border-color;
+    border-top-width: $border-width;
+  }
+
+  .nhsuk-expander-group .nhsuk-expander:not(:last-child) {
+    border-bottom-width: 0;
   }
 
   .nhsapp-cards--stacked .nhsapp-card .nhsapp-card__container {
     border-color: $border-color;
+    border-width: $border-width;
   }
 
   // Border radius
