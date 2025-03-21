@@ -1,14 +1,21 @@
 .v1 {
 
   $border-color: $color_nhsuk-grey-3;
+
+  $primary-container-border-color: $border-color;
+  $secondary-container-border-color: $border-color;
+
   $border-radius: 8px;
   $border-width: 1px;
+
   $icon-size-24: 24px;
   $icon-size-28: 28px;
   $icon-size-32: 32px;
   $icon-size-36: 36px;
+
   $icon-gap-mobile: 8px;
   $icon-gap-desktop: 12px;
+
   $hover-color: darken($color_nhsuk-blue, 15%);
   $active-color: darken($color_nhsuk-blue, 25%);
 
@@ -30,24 +37,51 @@
   }
 
   // Border colour
+  // Primary containers
   .app-cards--secondary .nhsapp-card,
-  .app-card--secondary,
   .nhsapp-card,
-  .nhsapp-cards--stacked .nhsapp-card .nhsapp-card__container,
   .nhsapp-cards--stacked .nhsapp-card:first-of-type,
   .nhsapp-cards--stacked .nhsapp-card:last-of-type,
   .nhsuk-card,
-  .nhsuk-expander,
-  .nhsuk-details__text
+  .nhsuk-expander
    {
-    border-color: $border-color;
+    border-color: $primary-container-border-color;
+    border-width: $border-width;
+  }
+
+  // Border colour
+  // Secondary containers
+  .app-cards--secondary .nhsapp-card,
+  .app-card--secondary,
+  .app-cards--secondary .nhsapp-card:first-of-type,
+  .app-cards--secondary .nhsapp-card:last-of-type,
+  .app-expander--secondary,
+  .nhsuk-card--secondary
+   {
+    border-color: $secondary-container-border-color;
+    border-width: $border-width;
   }
 
   // Border style
+  // Secondary containers
   .nhsuk-card--secondary,
   .nhsuk-card--clickable,
   .nhsuk-expander {
-    border: $border-width solid $border-color;
+    border-width: $border-width;
+    border-style: solid;
+  }
+
+  .nhsuk-details__text {
+    border-color: $border-color;
+  }
+
+  // Expander divider line
+  .nhsuk-expander-group .nhsuk-expander:not(:first-child) {
+    border-top-color: $border-color;
+  }
+
+  .nhsapp-cards--stacked .nhsapp-card .nhsapp-card__container {
+    border-color: $border-color;
   }
 
   // Border radius
@@ -85,11 +119,6 @@
   // Needed to remove white background for rounded edges
   .nhsuk-expander .nhsuk-details__summary {
     background-color: transparent;
-  }
-
-  // Stack expanders
-  .nhsuk-expander-group > .nhsuk-details {
-    margin-bottom: -1px;
   }
 
   // Make app card link divider line full width
@@ -187,7 +216,7 @@
   }
 
   .nhsuk-expander-group .nhsuk-expander  {
-    margin-bottom: -1px;
+    margin-bottom: - $border-width;
 
     &:last-of-type {
       margin-bottom: 0;

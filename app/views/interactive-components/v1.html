@@ -5,6 +5,26 @@
 
 {% block contentInner %}
 
+<h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Updates</h2>
+<ul>
+  <li>8px border radius on all cards and buttons</li>
+  <li>transparent background and border for secondary cards</li>
+  <li>removed box-shadow (beard) from cards</li>
+  <li>card links and expander style consistent</li>
+  <li>added secondary expander style</li>
+  <li>increased border colour contrast using $color_nhsuk-grey-3</li>
+  <li>added new link style - thicker border on hover</li>
+</ul>
+<h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Things to consider</h2>
+<ul>
+  <li>chevron icon style for cards</li>
+  <li>underlines v no underlines</li>
+  <li>'top task card' padding and semantics</li>
+  <li>action link variants</li>
+  <li>details icon</li>
+</ul>
+<hr>
+
 <div class="v1">
 
   {{ card({
@@ -168,20 +188,6 @@
     </ul>"
   }) }}
 
-  {{ button({
-    text: "Primary"
-  }) }}
-  
-  {{ button({
-    text: "Secondary",
-    classes: "nhsuk-button--secondary"
-  }) }}
-
-  {{ button({
-    text: "Warning",
-    classes: "nhsuk-button--warning"
-  }) }}
-
   <div class="nhsapp-button-group">
 
     {{ button({
@@ -255,6 +261,20 @@
     previousPage: "Treatments",
     nextUrl: "#",
     nextPage: "Symptoms"
+  }) }}
+
+  {{ button({
+    text: "Primary"
+  }) }}
+  
+  {{ button({
+    text: "Secondary",
+    classes: "nhsuk-button--secondary"
+  }) }}
+
+  {{ button({
+    text: "Warning",
+    classes: "nhsuk-button--warning"
   }) }}
 
   <ul class="nhsapp-cards nhsapp-cards--stacked">
