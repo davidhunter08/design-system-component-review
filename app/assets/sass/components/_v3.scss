@@ -1,12 +1,13 @@
 .v3 {
 
-  $border-color: $color_nhsuk-grey-3;
+  $border-color: #c1d2d5;
 
   $primary-container-border-color: $border-color;
   $secondary-container-border-color: $border-color;
 
   $border-radius: 6px;
-  $border-width: 1px;
+  $border-width: 2px;
+  $border-width-inner: 1px;
 
   $icon-size-24: 24px;
   $icon-size-28: 28px;
@@ -16,7 +17,7 @@
   $icon-gap-mobile: 8px;
   $icon-gap-desktop: 12px;
 
-  $chevron-color: rgba($color_nhsuk-blue, 65%);
+  $chevron-color: #6f8f94;
 
   $hover-color: darken($color_nhsuk-blue, 15%);
   $active-color: darken($color_nhsuk-blue, 25%);
@@ -40,6 +41,7 @@
 
   hr {
     border-color: $border-color;
+    border-width: $border-width;
   }
 
   .app-section-break--4 {
@@ -88,7 +90,7 @@
   // Expander divider line
   .nhsuk-expander-group .nhsuk-expander:not(:first-child) {
     border-top-color: $border-color;
-    border-top-width: $border-width;
+    border-top-width: $border-width-inner;
   }
 
   .nhsuk-expander-group .nhsuk-expander:not(:last-child) {
@@ -97,7 +99,7 @@
 
   .nhsapp-cards--stacked .nhsapp-card .nhsapp-card__container {
     border-color: $border-color;
-    border-width: $border-width;
+    border-width: $border-width-inner;
   }
 
   // Border radius
@@ -275,8 +277,7 @@
     @include mq($from: tablet) {
       top: calc(50% - ($icon-size-28/2));
     }
-}
-
+  }
   // Icon spacing
   .app-link--with-icon {
     gap: $icon-gap-mobile;
@@ -435,7 +436,5 @@
       color: $color_nhsuk-grey-1;
     }
   }
-
-
 
 }
