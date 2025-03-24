@@ -1,11 +1,11 @@
-.v3 {
+.v4 {
 
-  $border-color: #a7c0c4;
+  $border-color: $color_nhsuk-grey-3;
 
   $primary-container-border-color: $border-color;
   $secondary-container-border-color: $border-color;
 
-  $border-radius: 6px;
+  $border-radius: 8px;
   $border-width: 2px;
   $border-width-inner: 1px;
 
@@ -17,7 +17,7 @@
   $icon-gap-mobile: 8px;
   $icon-gap-desktop: 12px;
 
-  $chevron-color: #6f8f94;
+  $chevron-color: $color_nhsuk-grey-2;
 
   $hover-color: darken($color_nhsuk-blue, 15%);
   $active-color: darken($color_nhsuk-blue, 25%);
