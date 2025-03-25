@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  {{ pageTitle}} | Page Example | {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {% block contentInner %}
+      {% endblock %}
+
+      <span class="nhsuk-caption-m">Style {{ styleVersion }}</span>
+
+    </div>
+  </div>
+{% endblock %}

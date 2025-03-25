@@ -1,0 +1,37 @@
+{% extends 'page-template-for-examples.html' %}
+
+{% set pageSection = "Page example" %}
+{% set pageTitle = "NHS App homepage" %}
+
+{% block contentInner %}
+
+<div class="{{ styleVersion }}">
+
+  <h1 class="nhsuk-u-margin-bottom-5">Account</h1>
+
+    {{ nhsappCardGroup({
+      stacked: true,
+      cards: [
+        {
+          title: 'Manage services for another person',
+          href: '#'
+        },
+        {
+          title: 'Settings',
+          href: '#'
+        },
+        {
+          title: 'Help and support',
+          href: '#'
+        }
+      ]
+    }) }}
+
+    {{ button({
+      text: "Log out",
+      classes: "nhsapp-button--secondary nhsapp-button"
+    }) }}
+
+</div>
+
+{% endblock %}
