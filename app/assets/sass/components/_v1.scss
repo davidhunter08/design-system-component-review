@@ -235,13 +235,24 @@
   }
 
   // Icon sizing
-  .nhsapp-card .nhsapp-icon {
+  .app-link--with-icon .nhsapp-icon,
+  .nhsuk-card__content--primary .nhsuk-icon {
     height: $icon-size-24;
     width: $icon-size-24;
 
     @include mq($from: tablet) {
       height: $icon-size-28;
       width: $icon-size-28;
+    }
+  }
+
+  .nhsuk-card__content--primary .nhsuk-icon {
+    fill: $chevron-color;
+    margin-top: 0;
+    top: calc(50% - ($icon-size-24/2));
+
+    @include mq($from: tablet) {
+      top: calc(50% - ($icon-size-28/2));
     }
   }
 

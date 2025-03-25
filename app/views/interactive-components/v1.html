@@ -7,17 +7,17 @@
 
 <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Updates</h2>
 <ul>
-  <li>8px border radius on all cards and buttons</li>
-  <li>transparent background and border for secondary cards</li>
+  <li>8px border radius (on cards and buttons)</li>
+  <li>transparent background and with a 1px border for secondary cards</li>
   <li>removed box-shadow (beard) from cards</li>
   <li>card links and expander style consistent</li>
+  <li>card chevron consistent</li>
   <li>added secondary expander style</li>
   <li>increased border colour contrast using $color_nhsuk-grey-3</li>
   <li>added new link style - thicker border on hover</li>
 </ul>
 <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Things to consider</h2>
 <ul>
-  <li>chevron icon style for cards</li>
   <li>underlines v no underlines</li>
   <li>'top task card' padding and semantics</li>
   <li>action link variants</li>
@@ -36,14 +36,17 @@
     headingClasses: "nhsuk-heading-xs"
   }) }}
 
-  {{ card({
-    href: "#",
-    primary: "true",
-    clickable: "true",
-    heading: "Primary card",
-    headingClasses: "nhsuk-heading-m",
-    description: "A quick guide for people who have care and support needs and their carers"
-  }) }}
+  <div class="nhsuk-card nhsuk-card--clickable">
+    <div class="nhsuk-card__content nhsuk-card__content--primary">
+      <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="#">Primary card</a>
+      </h2>
+      <p class="nhsuk-card__description nhsuk-u-margin-bottom-0">A quick guide for people who have care and support needs and their carers</p>
+      <svg class="nhsuk-icon nhsapp-icon nhsapp-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="2rem" width="2rem" viewBox="0 0 24 24">
+        <path d="M8.82 19.11a.97.97 0 0 1-.72-.31.996.996 0 0 1 .03-1.41l5.61-5.38-5.6-5.25c-.4-.38-.42-1.01-.05-1.41.38-.4 1.01-.42 1.41-.05l6.37 5.97c.2.19.31.45.32.72s-.11.54-.31.73l-6.37 6.11c-.19.19-.44.28-.69.28Z"></path>
+      </svg>
+    </div>
+  </div>
 
   {{ card({
     href: "#",
