@@ -14,9 +14,14 @@ $swatch_4_grey-3:	#9BABBA;
 $swatch_4_grey-4:	#D2DBE4;
 $swatch_4_grey-5:	#ECF1F7;
 
+// Elements with swatch 1
 body.swatch-1 {
   background-color: $swatch_1_grey-5;
   color: $swatch_1_black;
+
+  .nhsuk-caption-xl {
+    color: $swatch_1_grey-1;
+  }
 
   .nhsuk-footer-container,
   .nhsuk-footer {
@@ -28,9 +33,14 @@ body.swatch-1 {
   }
 }
 
+// Elements with swatch 4
 body.swatch-4 {
   background-color: $swatch_4_grey-5;
   color: $swatch_4_black;
+
+  .nhsuk-caption-xl {
+    color: $swatch_4_grey-1;
+  }
 
   .nhsuk-footer-container,
   .nhsuk-footer {
