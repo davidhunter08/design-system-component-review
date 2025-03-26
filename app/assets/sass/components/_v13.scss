@@ -21,6 +21,9 @@
   $icon-gap-mobile: 8px;
   $icon-gap-desktop: 12px;
 
+  $icon-card-gap-mobile: 12px;
+  $icon-card-gap-desktop: 16px;
+
   $hover-color: darken($color_nhsuk-blue, 15%);
   $active-color: darken($color_nhsuk-blue, 25%);
 
@@ -231,7 +234,8 @@
   .nhsapp-cards--stacked,
   .nhsuk-card,
   .nhsuk-expander-group,
-  .nhsuk-expander {
+  .nhsuk-expander,
+  .nhsuk-card--care {
     @include nhsuk-responsive-margin(6, "bottom");
   }
 
@@ -290,10 +294,10 @@
   }
 
   .nhsapp-card__container {
-    gap: $icon-gap-mobile;
+    gap: $icon-card-gap-mobile;
 
     @include mq($from: tablet) {
-      gap: $icon-gap-desktop;
+      gap: $icon-card-gap-desktop;
     }
   }
 
@@ -369,18 +373,18 @@
   
     .nhsuk-details__summary-text {
       display: block;
-      padding-left: calc($icon-size-28 + $icon-gap-desktop);
+      padding-left: calc($icon-size-28 + $icon-card-gap-desktop);
 
       @include mq($until: tablet) {
-        padding-left: calc($icon-size-24 + $icon-gap-mobile);
+        padding-left: calc($icon-size-24 + $icon-card-gap-mobile);
       }
     }
 
     .nhsuk-details__text {
-      padding-left: calc(nhsuk-spacing(4) + ($icon-size-28 + $icon-gap-desktop));
+      padding-left: calc(nhsuk-spacing(4) + ($icon-size-28 + $icon-card-gap-desktop));
 
       @include mq($until: tablet) {
-        padding-left: calc(nhsuk-spacing(3) + ($icon-size-24 + $icon-gap-mobile));
+        padding-left: calc(nhsuk-spacing(3) + ($icon-size-24 + $icon-card-gap-mobile));
       }
     }
   
@@ -464,6 +468,36 @@
   .nhsapp-card__below {
     p {
       color: $grey-1;
+    }
+  }
+
+  // Care cards
+  .nhsuk-card--care__heading-container {
+    border-radius: 7px 7px 0 0; // Made 1px less due to funky styling
+  }
+
+  .nhsuk-card--care--non-urgent {
+    border-color: #005eb8;
+  }
+
+  .nhsuk-card--care--urgent {
+    border-color: #d5281b;
+  }
+
+  .nhsuk-card--care--emergency {
+    border-color: transparent;
+
+    .nhsuk-card__content {
+      border-radius: 0 0 8px 8px;
+    }
+  }
+
+  .nhsuk-warning-callout {
+    border-radius: 8px;
+    border-color: #ffeb3b;
+
+    .nhsuk-warning-callout__label {
+      border-radius: 8px 8px 8px 0;
     }
   }
 
