@@ -1,0 +1,43 @@
+// Swatch 1 (On Figma file)
+$swatch_1_black:	#001A33;
+$swatch_1_grey-1:	#4D5F70;
+$swatch_1_grey-2:	#808C99;
+$swatch_1_grey-3:	#B3BAC2;
+$swatch_1_grey-4:	#D9DDE0;
+$swatch_1_grey-5:	#F2F4F5;
+
+// Swatch 4 (On Figma file)
+$swatch_4_black:	#2F3944;
+$swatch_4_grey-1:	#516271;
+$swatch_4_grey-2:	#708599;
+$swatch_4_grey-3:	#9BABBA;
+$swatch_4_grey-4:	#D2DBE4;
+$swatch_4_grey-5:	#ECF1F7;
+
+body.swatch-1 {
+  background-color: $swatch_1_grey-5;
+  color: $swatch_1_black;
+
+  .nhsuk-footer-container,
+  .nhsuk-footer {
+    background-color: $swatch_1_grey-4;
+  }
+  .nhsuk-footer__list-item-link,
+  .nhsuk-footer__copyright {
+    color: $swatch_1_black !important;
+  }
+}
+
+body.swatch-4 {
+  background-color: $swatch_4_grey-5;
+  color: $swatch_4_black;
+
+  .nhsuk-footer-container,
+  .nhsuk-footer {
+    background-color: $swatch_4_grey-4;
+  }
+  .nhsuk-footer__list-item-link,
+  .nhsuk-footer__copyright {
+    color: $swatch_4_black !important;
+  }
+}
