@@ -373,6 +373,14 @@
         padding-left: calc($icon-size-24 + $icon-gap-mobile);
       }
     }
+
+    .nhsuk-details__text {
+      padding-left: calc(nhsuk-spacing(4) + ($icon-size-28 + $icon-gap-desktop));
+
+      @include mq($until: tablet) {
+        padding-left: calc(nhsuk-spacing(3) + ($icon-size-24 + $icon-gap-mobile));
+      }
+    }
   
     .nhsuk-details__summary-text::before {
       height: $icon-size-28;
