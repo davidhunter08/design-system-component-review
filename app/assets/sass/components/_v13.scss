@@ -167,7 +167,8 @@
   .nhsuk-card__link,
   .app-link--with-icon,
   .nhsuk-breadcrumb__link,
-  .nhsuk-pagination__page {
+  .nhsuk-pagination__page,
+  a {
     @include link-style;
 
     &:hover {
@@ -188,7 +189,8 @@
     
   }
 
-  .nhsuk-expander .nhsuk-details__summary {
+  .nhsuk-expander .nhsuk-details__summary,
+  .nhsapp-card__link {
     text-decoration: none;
   }
 
@@ -196,7 +198,8 @@
   .nhsapp-card__link,
   .nhsuk-action-link__link,
   .nhsuk-back-link__link,
-  .nhsuk-breadcrumb__backlink {
+  .nhsuk-breadcrumb__backlink,
+  .nhsapp-card__link {
     &:hover {
       @include link-style-hover;
     }
@@ -372,7 +375,6 @@
     }
   
     .nhsuk-details__summary-text {
-      display: block;
       padding-left: calc($icon-size-28 + $icon-card-gap-desktop);
 
       @include mq($until: tablet) {
@@ -381,10 +383,10 @@
     }
 
     .nhsuk-details__text {
-      padding-left: calc(nhsuk-spacing(4) + ($icon-size-28 + $icon-card-gap-desktop));
+      padding: 0 28px 28px 28px;
 
       @include mq($until: tablet) {
-        padding-left: calc(nhsuk-spacing(3) + ($icon-size-24 + $icon-card-gap-mobile));
+        padding: 0 20px 20px 20px;
       }
     }
   
@@ -497,7 +499,7 @@
     border-color: #ffeb3b;
 
     .nhsuk-warning-callout__label {
-      border-radius: 8px 8px 8px 0;
+      border-radius: 8px 8px 8px 8px;
     }
   }
 
