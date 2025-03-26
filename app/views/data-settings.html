@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% set pageHeading = "Style settings" %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0",
+    href: "/"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1>{{ pageHeading }}</h1>
+
+      <form method="post" action="/index" novalidate="novalidate">
+
+        {{ input({
+          "label": {
+          "text": "Style version",
+          "classes": "nhsuk-label--m nhsuk-u-margin-bottom-3"
+          },
+          "id": "styleVersion",
+          "name": "styleVersion",
+          "classes": "nhsuk-input--width-4",
+          "value": data['styleVersion']
+        }) }}
+
+        {{ button({
+          text: "Save settings",
+          classes: "nhsapp-button"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

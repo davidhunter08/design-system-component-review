@@ -4,6 +4,14 @@
   {{ pageTitle}} | Page Example | {{ serviceName }}
 {% endblock %}
 
+{% if data['styleVersion'] in ["v12", "v13"] %}
+  {% set bodyClasses = "swatch-4" %}
+{% endif %}
+
+{% if data['styleVersion'] in ["v11"] %}
+  {% set bodyClasses = "swatch-1" %}
+{% endif %}
+
 {% block beforeContent %}
 {% endblock %}
 
@@ -11,10 +19,14 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-      {% block contentInner %}
-      {% endblock %}
+      <div class="{{ data['styleVersion'] }}">
 
-      <span class="nhsuk-caption-m">Style {{ styleVersion }}</span>
+        {% block contentInner %}
+        {% endblock %}
+
+      </div>
+
+      <span class="nhsuk-caption-m">Style {{ data['styleVersion'] }}</span>
 
     </div>
   </div>

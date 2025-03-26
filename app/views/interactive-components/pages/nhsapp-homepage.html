@@ -5,8 +5,6 @@
 
 {% block contentInner %}
 
-<div class="{{ styleVersion }}">
-
   <div class="nhsuk-u-margin-bottom-7 nhsuk-u-padding-top-4">
     <svg class="nhsuk-logo nhsuk-u-margin-bottom-1" xmlns="http://www.w3.org/2000/svg" focusable="false" viewBox="0 0 40 16" height="28" width="70" aria-describedby="nhs-logo-title" role="img">
       <title id="nhs-logo-title">NHS</title>
@@ -99,7 +97,6 @@
     }) }}
   {% else %}
     {{ nhsappCardGroup({
-      stacked: true,
       cards: [
         {
           title: 'View your messages',
@@ -119,7 +116,5 @@
     href: '#',
     prefixIcon: 'switchProfile'
   }) }}
-
-</div>
 
 {% endblock %}
