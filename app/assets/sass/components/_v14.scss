@@ -487,4 +487,18 @@
     border-radius: 0;
   }
 
+  // Blue card
+  .app-cards--blue .nhsapp-card {
+    border: none;
+
+    .nhsapp-card__container {
+      border-color: rgba($card-blue-color, 0.2);
+    }
+
+    .nhsapp-icon__chevron-right {
+      fill: rgba($card-blue-color, 0.4);
+    }
+
+  }
+
 }
