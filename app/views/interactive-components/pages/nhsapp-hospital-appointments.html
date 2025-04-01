@@ -33,7 +33,7 @@
             <strong class="nhsapp-tag nhsapp-tag--red nhsuk-u-display-inline-block nhsuk-u-static-margin-bottom-3">Action needed</strong>
           </div>
           {% endif %}
-          <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/pages/your-health/view-or-manage-appointment" aria-label="Orthopaedic appointment on Monday 3 June 2024 at 9:40am">
+          <a class="nhsapp-card__link nhsuk-u-font-size-22 nhsuk-link--no-visited-state" href="/pages/your-health/view-or-manage-appointment" aria-label="Orthopaedic appointment on Monday 3 June 2024 at 9:40am">
             Orthopaedic appointment
           </a>
           <div class="nhsapp-card__below">
@@ -62,10 +62,11 @@
   })}}
 
   <!-- CARDS -->
-  <div class="nhsapp-card">
+  <ul class="nhsapp-cards">
+  <li class="nhsapp-card">
     <div class="nhsapp-card__container">
       <div class="nhsapp-card__content">
-        <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="#" aria-label="Rheumatology appointment on Tuesday 18 February 2024 at 3:20pm">
+        <a class="nhsapp-card__link nhsuk-u-font-size-22 nhsuk-link--no-visited-state" href="#" aria-label="Rheumatology appointment on Tuesday 18 February 2024 at 3:20pm">
           Rheumatology appointment
         </a>
         <div class="nhsapp-card__below">
@@ -78,9 +79,9 @@
       </div>
       {{ nhsappIcon('chevronRight') }}
     </div>
-  </div>
+  </li>
 
-  <div class="nhsapp-card app-card--secondary">
+  <li class="nhsapp-card app-card--secondary">
     <div class="nhsapp-card__container">
       <div class="nhsapp-card__content">
         <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/pages/your-health/past-appointments">
@@ -89,6 +90,7 @@
       </div>
       {{ nhsappIcon('chevronRight') }}
     </div>
-  </div>
+  </li>
+</ul>
 
 {% endblock %}
