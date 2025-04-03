@@ -1,0 +1,224 @@
+{% extends 'page-template.html' %}
+
+{% set pageSection = "Interactive components" %}
+{% set pageTitle = "Version 16" %}
+
+{% block contentInner %}
+
+<h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Updates</h2>
+<p>Making card link, expander and button styles consistent</p>
+<ul>
+  <li>added 2px border to all card containers</li>
+  <li>reduced card link font size</li>
+  <li>made divider lines full width</li>
+  <li>changed the expander icon to make consistent with card link chevron</li>
+  <li>changed icon colour to reduce visual noise</li>
+  <li>increased width of section break to 2px</li>
+  <li>updated card link and expander spacing to match buttons</li>
+</ul>
+
+<div class="v16">
+
+  <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
+
+  {{ nhsappCardGroup({
+    stacked: true,
+    cards: [
+      {
+        title: 'Card link',
+        href: '#'
+      },
+      {
+        title: 'Card link',
+        href: '#'
+      },
+      {
+        title: 'Card link',
+        href: '#',
+        description: 'With a description'
+      }
+    ]
+  }) }}
+
+  {{ nhsappCardGroup({
+    stacked: true,
+    classes: "app-cards--secondary",
+    cards: [
+      {
+        title: "Secondary card link",
+        href: "#"
+      },
+      {
+        title: "Secondary card link",
+        href: "#"
+      },
+      {
+        title: "Secondary card link",
+        href: "#",
+        description: 'With a description'
+      }
+    ]
+  })}}
+
+  {{ nhsappCard({
+    title: 'Card link with icon',
+    href: '#',
+    prefixIcon: 'switchProfile'
+  }) }}
+
+  <div class="nhsuk-expander-group">
+    {{ details({
+      classes: "nhsuk-expander",
+      text: "Expander",
+      HTML: "
+      <p>You can see your GP records by:</p>
+      <ul>
+        <li>asking for them at your GP surgery </li>
+        <li>going online to see them (if you have signed up for GP online services) </li>
+      </ul>"
+    }) }}
+    {{ details({
+      classes: "nhsuk-expander",
+      text: "Expander",
+      HTML: "
+      <p>You can see your GP records by:</p>
+      <ul>
+        <li>asking for them at your GP surgery </li>
+        <li>going online to see them (if you have signed up for GP online services) </li>
+      </ul>"
+    }) }}
+    {{ details({
+      classes: "nhsuk-expander",
+      text: "Expander",
+      HTML: "
+      <p>You can see your GP records by:</p>
+      <ul>
+        <li>asking for them at your GP surgery </li>
+        <li>going online to see them (if you have signed up for GP online services) </li>
+      </ul>"
+    }) }}
+  </div>
+
+  {{ details({
+    classes: "nhsuk-expander",
+    text: "Expander",
+    HTML: "
+    <p>You can see your GP records by:</p>
+    <ul>
+      <li>asking for them at your GP surgery </li>
+      <li>going online to see them (if you have signed up for GP online services) </li>
+    </ul>"
+  }) }}
+
+  <div class="nhsuk-expander-group">
+    {{ details({
+      classes: "nhsuk-expander app-expander--secondary",
+      text: "Expander secondary",
+      HTML: "
+      <p>You can see your GP records by:</p>
+      <ul>
+        <li>asking for them at your GP surgery </li>
+        <li>going online to see them (if you have signed up for GP online services) </li>
+      </ul>"
+    }) }}
+    {{ details({
+      classes: "nhsuk-expander app-expander--secondary",
+      text: "Expander secondary",
+      HTML: "
+      <p>You can see your GP records by:</p>
+      <ul>
+        <li>asking for them at your GP surgery </li>
+        <li>going online to see them (if you have signed up for GP online services) </li>
+      </ul>"
+    }) }}
+    {{ details({
+      classes: "nhsuk-expander app-expander--secondary",
+      text: "Expander secondary",
+      HTML: "
+      <p>You can see your GP records by:</p>
+      <ul>
+        <li>asking for them at your GP surgery </li>
+        <li>going online to see them (if you have signed up for GP online services) </li>
+      </ul>"
+    }) }}
+  </div>
+
+  {{ details({
+    classes: "nhsuk-expander app-expander--secondary",
+    text: "Expander secondary",
+    HTML: "
+    <p>You can see your GP records by:</p>
+    <ul>
+      <li>asking for them at your GP surgery </li>
+      <li>going online to see them (if you have signed up for GP online services) </li>
+    </ul>"
+  }) }}
+
+  <div class="nhsapp-button-group">
+
+    {{ button({
+      text: "Primary",
+      classes: "nhsapp-button"
+    }) }}
+    
+    {{ button({
+      text: "Secondary",
+      classes: "nhsapp-button--secondary nhsapp-button"
+    }) }}
+
+    {{ button({
+      text: "Warning",
+      classes: "nhsuk-button--warning nhsapp-button"
+    }) }}
+    
+  </div>
+
+  <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
+
+  <p>Added `nhsuk-u-font-size-22` class to the card link title.</p>
+
+  <p>The nunjucks macro will need updating to allow custom classes to be added to the card link title.</p>
+
+  <ul class="nhsapp-cards nhsapp-cards--stacked">
+    <li class="nhsapp-card">
+      <div class="nhsapp-card__container nhsuk-u-margin-left-4">
+        <div class="nhsapp-card__content">
+          <div class="nhsapp-card__above">
+            <p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-0">1:02pm</p>
+          </div>
+          <a href="#" class="nhsapp-card__link nhsuk-link--no-visited-state nhsuk-u-font-size-22">
+            <span class="nhsapp-badge-small nhsapp-badge-small--absolute">
+              <span class="nhsapp-badge-small__indicator" aria-hidden="true"></span>
+              <span class="nhsuk-u-visually-hidden">Unread message</span>
+            </span>Portland Street Great Westood Surgery
+            <span class="nhsuk-u-visually-hidden">received today at 1:02pm</span>
+          </a>
+          <div class="nhsapp-card__below">
+            <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines">Patient survey reminder. The Patient feedback survey is about to close. Have your say about Portland Street Great Westood Surgery by providing us with your thoughts.</p>
+          </div>
+        </div>
+        <svg class="nhsapp-icon nhsapp-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" height="2rem" width="2rem" viewBox="0 0 24 24" > <path d="M8.82 19.11a.97.97 0 0 1-.72-.31.996.996 0 0 1 .03-1.41l5.61-5.38-5.6-5.25c-.4-.38-.42-1.01-.05-1.41.38-.4 1.01-.42 1.41-.05l6.37 5.97c.2.19.31.45.32.72s-.11.54-.31.73l-6.37 6.11c-.19.19-.44.28-.69.28Z" /> </svg> 
+      </div>
+    </li>
+    <li class="nhsapp-card">
+      <div class="nhsapp-card__container nhsuk-u-margin-left-4">
+        <div class="nhsapp-card__content">
+          <div class="nhsapp-card__above">
+            <p aria-hidden="true" class="nhsuk-u-margin-bottom-0">15 Mar 2024</p>
+          </div>
+          <a href="#" class="nhsapp-card__link nhsuk-link--no-visited-state nhsuk-u-font-size-22">
+            Range surgery
+            <span class="nhsuk-u-visually-hidden">received on 15 March 2024 at 9:00am</span>
+          </a>
+          <div class="nhsapp-card__below">
+            <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines nhsuk-u-secondary-text-color">Reminder of your telephone appointment with your GP on Friday 23 October at 1:30pm.</p>
+          </div>
+        </div>
+        <svg class="nhsapp-icon nhsapp-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" height="2rem" width="2rem" viewBox="0 0 24 24" > <path d="M8.82 19.11a.97.97 0 0 1-.72-.31.996.996 0 0 1 .03-1.41l5.61-5.38-5.6-5.25c-.4-.38-.42-1.01-.05-1.41.38-.4 1.01-.42 1.41-.05l6.37 5.97c.2.19.31.45.32.72s-.11.54-.31.73l-6.37 6.11c-.19.19-.44.28-.69.28Z" /> </svg> 
+      </div>
+    </li>
+  </ul>
+
+</div>
+
+{% endblock %}
