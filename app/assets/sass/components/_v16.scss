@@ -7,8 +7,6 @@
 
   $chevron-color: $color_nhsuk-grey-3;
 
-  $grey-1: $swatch_4_grey-1; // For secondary text colour
-
   $border-radius: 0;
   $primary-container-border-width: 2px;
   $border-width: 2px;
@@ -25,25 +23,6 @@
   $icon-card-gap-mobile: 12px;
   $icon-card-gap-desktop: 16px;
 
-  $hover-color: darken($color_nhsuk-blue, 15%);
-  $active-color: darken($color_nhsuk-blue, 25%);
-
-  // Adjusted link style to imtpove the underline spacing
-  @mixin link-style {
-    text-decoration: underline;
-    text-decoration-thickness: max(1px, .0625rem);
-    text-underline-offset: .1578em;
-  }
-
-  @mixin link-style-hover {
-    color: $hover-color;
-    text-decoration: underline;
-    text-decoration-thickness: max(3px, .1875rem, .12em);
-    -webkit-text-decoration-skip-ink: none;
-    text-decoration-skip-ink: none;
-    -webkit-text-decoration-skip: none;
-    text-decoration-skip: none;
-  }
 
   hr {
     border-color: $border-color;
@@ -61,8 +40,7 @@
   .nhsapp-cards--stacked .nhsapp-card:first-of-type,
   .nhsapp-cards--stacked .nhsapp-card:last-of-type,
   .nhsuk-card,
-  .nhsuk-expander
-   {
+  .nhsuk-expander {
     border-color: $primary-container-border-color;
     border-width: $primary-container-border-width;
   }
@@ -73,9 +51,7 @@
   .app-card--secondary,
   .app-cards--secondary .nhsapp-card:first-of-type,
   .app-cards--secondary .nhsapp-card:last-of-type,
-  .app-expander--secondary,
-  .nhsuk-card--secondary
-   {
+  .app-expander--secondary {
     border-color: $secondary-container-border-color;
     border-width: $border-width;
   }
@@ -115,14 +91,6 @@
   .nhsuk-card,
   .nhsuk-expander {
     border-radius: $border-radius;
-  }
-
-  // Button padding
-  // Increase nhs.uk button side padding
-  .nhsuk-button {
-    @include mq($from: tablet) {
-      padding: 12px 24px;
-    }
   }
 
   // Button padding
@@ -169,10 +137,8 @@
   }
 
   // Bottom margin
-  .nhsuk-action-link,
   .nhsapp-card,
   .nhsapp-cards--stacked,
-  .nhsuk-card,
   .nhsuk-expander-group,
   .nhsuk-expander,
   .nhsuk-card--care {
@@ -191,11 +157,6 @@
     }
   }
 
-  // Give link with icon the same bottom margin as a standard link
-  .app-link--with-icon {
-    @include nhsuk-responsive-margin(4, "bottom");
-  }
-
   // Icon sizing
   .nhsapp-card .nhsapp-icon {
     height: $icon-size-24;
@@ -207,32 +168,7 @@
     }
   }
 
-  // Icon sizing
-  .app-link--with-icon .nhsapp-icon,
-  .nhsuk-card__content--primary .nhsuk-icon {
-    height: $icon-size-24;
-    width: $icon-size-24;
-
-    @include mq($from: tablet) {
-      height: $icon-size-28;
-      width: $icon-size-28;
-    }
-  }
-
-  .nhsuk-card__content--primary .nhsuk-icon {
-    fill: $chevron-color;
-    margin-top: 0;
-    top: calc(50% - ($icon-size-24/2));
-
-    @include mq($from: tablet) {
-      top: calc(50% - ($icon-size-28/2));
-    }
-  }
   // Icon spacing
-  .app-link--with-icon {
-    gap: $icon-gap-mobile;
-  }
-
   .nhsapp-card__container {
     gap: $icon-card-gap-mobile;
 
@@ -242,8 +178,21 @@
   }
 
   // Icon colour
-  .nhsapp-card .nhsapp-icon__chevron-right {
-    fill: $chevron-color;
+  .nhsapp-card {
+    .nhsapp-icon__chevron-right {
+      fill: $chevron-color;
+      margin-right: -8px; // To align chevron right
+
+      @include mq($from: tablet) {
+        margin-right: -10px; // To align chevron right
+      }
+    }
+
+    &:hover {
+      .nhsapp-icon__chevron-right {
+        fill: $nhsuk-link-hover-color; 
+      }
+    }
   }
 
   // Text sizing
@@ -252,9 +201,24 @@
   }
 
   // Text style
-  .nhsuk-expander .nhsuk-details__summary-text {
-    font-weight: 600;
-    text-decoration: none;
+  .nhsuk-expander .nhsuk-details__summary {
+    .nhsuk-details__summary-text {
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    &:hover {
+      .nhsuk-details__summary-text {
+        text-decoration: underline;
+      }
+    }
+    &:focus{
+      &:hover {
+        .nhsuk-details__summary-text {
+          text-decoration: none;
+        }
+      }
+    }
   }
 
   // Padding
@@ -272,14 +236,6 @@
 
     @include mq($from: tablet) {
       padding: 20px 24px;
-    }
-  }
-
-  .nhsuk-card--secondary .nhsuk-card__content {
-    padding: 24px;
-
-    @include mq($from: tablet) {
-      padding: 32px;
     }
   }
 
@@ -306,7 +262,7 @@
 
       &:hover {
         .nhsuk-details__summary-text::before {
-          background-color: $hover-color; 
+          background-color: $nhsuk-link-hover-color; 
         }
       }
     }
@@ -316,14 +272,6 @@
 
       @include mq($until: tablet) {
         padding-left: calc($icon-size-24 + $icon-card-gap-mobile);
-      }
-    }
-
-    .nhsuk-details__text {
-      padding: 0 28px 28px 28px;
-
-      @include mq($until: tablet) {
-        padding: 0 20px 20px 20px;
       }
     }
   
@@ -385,7 +333,7 @@
   // Card link description style
   .nhsapp-card__below {
     p {
-      color: $grey-1;
+      color: $nhsuk-secondary-text-color;
     }
   }
 
