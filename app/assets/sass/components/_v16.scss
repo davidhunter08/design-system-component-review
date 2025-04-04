@@ -1,11 +1,13 @@
 .v16 {
 
   $border-color: $nhsuk-border-color;
+  $border-color--high-contrast: $color_nhsuk-grey-3;
 
   $primary-container-border-color: $border-color;
   $secondary-container-border-color: $border-color;
 
   $chevron-color: $color_nhsuk-grey-3;
+  $chevron-color--high-contrast: $color_nhsuk-grey-2;
 
   $border-radius: 0;
   $primary-container-border-width: 2px;
@@ -142,7 +144,7 @@
   .nhsuk-expander-group,
   .nhsuk-expander,
   .nhsuk-card--care {
-    @include nhsuk-responsive-margin(6, "bottom");
+    @include nhsuk-responsive-margin(5, "bottom");
   }
 
   .nhsapp-cards--stacked .nhsapp-card  {
@@ -355,6 +357,29 @@
       fill: rgba($card-blue-color, 0.4);
     }
 
+  }
+
+  @media (prefers-contrast: more) {
+    // Border colour
+  // Primary containers
+  .app-cards--secondary .nhsapp-card,
+  .nhsapp-card,
+  .nhsapp-cards--stacked .nhsapp-card:first-of-type,
+  .nhsapp-cards--stacked .nhsapp-card:last-of-type,
+  .nhsuk-card,
+  .nhsuk-expander {
+    border-color: $border-color--high-contrast;
+  }
+
+  // Border colour
+  // Secondary containers
+  .app-cards--secondary .nhsapp-card,
+  .app-card--secondary,
+  .app-cards--secondary .nhsapp-card:first-of-type,
+  .app-cards--secondary .nhsapp-card:last-of-type,
+  .app-expander--secondary {
+    border-color: $border-color--high-contrast;
+  }
   }
 
 }
