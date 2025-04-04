@@ -1,13 +1,13 @@
-.v16 {
+.v17 {
 
-  $border-color: $nhsuk-border-color;
+  $border-color: $color_nhsuk-grey-3;
 
   $primary-container-border-color: $border-color;
   $secondary-container-border-color: $border-color;
 
-  $chevron-color: $color_nhsuk-grey-3;
+  $chevron-color: $color_nhsuk-grey-2;
 
-  $border-radius: 0;
+  $border-radius: 12px;
   $primary-container-border-width: 2px;
   $border-width: 2px;
   $border-width-inner: 1px;
@@ -31,6 +31,11 @@
 
   .app-section-break--4 {
     border-width: 4px;
+  }
+
+  .nhsapp-button {
+    border-radius: 12px;
+    box-shadow: none;
   }
 
   // Border colour
@@ -60,7 +65,7 @@
   // Secondary containers
   .nhsuk-card--secondary,
   .nhsuk-card--clickable,
-  .nhsuk-expander {
+  .app-expander--secondary {
     border-width: $border-width;
     border-style: solid;
   }
