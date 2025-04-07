@@ -6,7 +6,7 @@
   $primary-container-border-color: $border-color;
   $secondary-container-border-color: $border-color;
 
-  $chevron-color: $color_nhsuk-grey-3;
+  $chevron-color: rgba($color_nhsuk-blue, 0.68);
   $chevron-color--high-contrast: $color_nhsuk-grey-2;
 
   $border-radius: 0;
@@ -354,7 +354,7 @@
     }
 
     .nhsapp-icon__chevron-right {
-      fill: rgba($card-blue-color, 0.4);
+      fill: rgba($card-blue-color, 0.68);
     }
 
   }
