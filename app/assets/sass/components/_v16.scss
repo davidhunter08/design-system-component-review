@@ -6,8 +6,8 @@
   $primary-container-border-color: $border-color;
   $secondary-container-border-color: $border-color;
 
-  $chevron-color: rgba($color_nhsuk-blue, 0.68);
-  $chevron-color--high-contrast: $color_nhsuk-grey-2;
+  $chevron-color: #5090CE;
+  $chevron-color--high-contrast: $color_nhsuk-blue;
 
   $border-radius: 0;
   $primary-container-border-width: 2px;
@@ -348,13 +348,15 @@
   // Blue card
   .app-cards--blue .nhsapp-card {
     border: none;
+    background: #CDDFF1;
+    color: #00264A;
 
     .nhsapp-card__container {
-      border-color: rgba($card-blue-color, 0.2);
+      border-color: rgba(#00264A, 0.2);
     }
 
     .nhsapp-icon__chevron-right {
-      fill: rgba($card-blue-color, 0.68);
+      fill: rgba(#00264A, 0.6);
     }
 
   }
