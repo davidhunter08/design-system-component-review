@@ -1,0 +1,58 @@
+{% extends 'page-template-for-examples.html' %}
+
+{% set pageSection = "Page example" %}
+{% set pageTitle = "Appointment type" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block contentInner %}
+
+  <form id="form" method="post" action="" novalidate="novalidate">
+
+    {{ radios({
+      idPrefix: "gp-appointment-type",
+      name: "gp-appointment-type",
+      fieldset: {
+        legend: {
+          text: "Select an appointment type",
+          classes: "nhsuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      },
+      "items": [
+        {
+          value: "Routine GP",
+          text: "Routine GP",
+          checked: checked("gp-appointment-type", "Routine GP")
+        },
+        {
+          value: "Asthma clinic",
+          text: "Asthma clinic",
+          checked: checked("gp-appointment-type", "Asthma clinic")
+        },
+        {
+          value: "Blood test",
+          text: "Blood test",
+          checked: checked("gp-appointment-type", "Blood test")
+        },
+        {
+          value: "B12 Injection",
+          text: "B12 Injection",
+          checked: checked("gp-appointment-type", "B12 Injection")
+        }
+      ]
+    }) }}
+
+    {{ button({
+      text: "Continue",
+      classes: "nhsapp-button"
+    }) }}
+    
+  </form>
+
+{% endblock %}

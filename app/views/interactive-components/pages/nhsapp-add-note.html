@@ -1,0 +1,39 @@
+{% extends 'page-template-for-examples.html' %}
+
+{% set pageSection = "Page example" %}
+{% set pageTitle = "Add note" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block contentInner %}
+
+  <form id="form" method="post" action="" novalidate="novalidate">
+
+    {{ characterCount({
+      "name": "prescription-request-note",
+      "id": "prescription-request-note",
+      "maxlength": 450,
+      value: data['prescription-request-note'],
+      "label": {
+        "text": "Add notes for your GP surgery (optional)",
+        "classes": "nhsuk-label--l nhsuk-u-margin-bottom-2",
+        isPageHeading: true
+      },
+      "hint": {
+        "text": "If you want to, add a note about your request. Your note may not be seen or replied to. If it's urgent, contact your GP surgery."
+      }
+    }) }}
+
+    {{ button({
+      text: "Continue",
+      classes: "nhsapp-button"
+    }) }}
+
+  </form>
+
+{% endblock %}
