@@ -9,7 +9,9 @@
   $chevron-color: #5090CE;
   $chevron-color--high-contrast: $color_nhsuk-blue;
 
-  $border-radius: 0;
+  $border-radius: 4px;
+  $button-radius: $border-radius;
+
   $primary-container-border-width: 2px;
   $border-width: 2px;
   $border-width-inner: 1px;
@@ -93,6 +95,10 @@
   .nhsuk-card,
   .nhsuk-expander {
     border-radius: $border-radius;
+  }
+
+  .nhsapp-button {
+    border-radius: $button-radius;
   }
 
   // Button padding
