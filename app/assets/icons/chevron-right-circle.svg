@@ -1,4 +1,6 @@
-<svg class="nhsapp-icon nhsapp-icon__chevron-right-circle" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="2rem" width="2rem" viewBox="0 0 24 24">
-    <circle class="icon-circle" cx="12" cy="12" r="12" style="fill:#f0f4f5"/>
-    <path class="icon-chevron" d="M8.82 19.11a.97.97 0 0 1-.72-.31.996.996 0 0 1 .03-1.41l5.61-5.38-5.6-5.25c-.4-.38-.42-1.01-.05-1.41.38-.4 1.01-.42 1.41-.05l6.37 5.97c.2.19.31.45.32.72s-.11.54-.31.73l-6.37 6.11c-.19.19-.44.28-.69.28Z"/>
+<svg class="nhsapp-icon nhsapp-icon__chevron-right-circle" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="2rem" width="2rem" viewBox="0 0 20 20">
+<g clip-path="url(#clip0_670_499)">
+<path class="circle" d="M20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10Z" fill="#005EB8" fill-opacity="0.15"/>
+<path class="chevron" d="M8.69284 14.7739C8.51229 14.7739 8.32479 14.7044 8.19284 14.5586C7.92895 14.2808 7.9359 13.8433 8.21368 13.5794L12.1095 9.8433L8.22062 6.19746C7.94284 5.93357 7.92895 5.49607 8.1859 5.2183C8.44979 4.94052 8.88729 4.92663 9.16506 5.18357L13.5887 9.32941C13.7276 9.46135 13.804 9.64191 13.8109 9.82941C13.8178 10.0169 13.7345 10.2044 13.5956 10.3364L9.17201 14.5794C9.04006 14.7114 8.86645 14.7739 8.69284 14.7739Z" fill="#005EB8" fill-opacity="0.8" />
+</g>
 </svg>
