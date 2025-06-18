@@ -1,27 +1,12 @@
-<!-- Use this page as the index for your project -->
-
-<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-
-<!-- Extends the layout from /app/views/layout.html -->
 {% extends 'layout.html' %}
-<!--
-  In /app/views/layout.html you can:
-    - change the header and footer
-    - add custom CSS and JavaScript
--->
 
-<!-- Set the page title -->
 {% block pageTitle %}
   {{ serviceName }}
 {% endblock %}
 
-<!-- For adding a breadcrumb or back link -->
-<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs and https://service-manual.nhs.uk/design-system/components/back-link -->
 {% block beforeContent %}
 {% endblock %}
 
-<!-- For adding page content -->
-<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
@@ -35,7 +20,7 @@
       <ul class="nhsuk-list">
         <li>
           <a href="/interactive-components/">Version 0</a>
-          <p class="nhsuk-u-margin-bottom-0">Current styles</p>
+          <p class="nhsuk-u-margin-bottom-0">Current NHS App styles</p>
         </li>
         <li>
           <a href="/interactive-components/v16">Version 16</a>
